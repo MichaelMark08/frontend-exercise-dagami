@@ -1,0 +1,19 @@
+<div class="title">Employee List</div>
+
+<div class="employee-list">
+  <div class="headers">
+    <div>Employee ID</div>
+    <div>Name</div>
+    <div>Email</div>
+  </div>
+  <div class="body">
+    <div class="empty-message" *ngIf="employeeList.length == 0">No data available</div>
+    <div class="list" *ngIf="employeeList.length > 0">
+      <div class="employee-details" *ngFor="let employee of employeeList">
+        <div class="detail">{{ employee.id }}</div>
+        <div class="detail">{{ employee.firstName }} {{ employee.lastName }}</div>
+        <div class="detail">{{ employee.email }}</div>
+      </div>
+    </div>
+  </div>
+</div>

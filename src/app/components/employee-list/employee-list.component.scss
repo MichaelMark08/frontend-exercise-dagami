@@ -1,0 +1,62 @@
+
+.title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    width: 1200px;
+}
+
+.employee-list {
+    width: 800px;
+    margin: auto;
+
+    .headers {
+        display: flex;
+        background-color: #404244;
+        color: #FFF;
+        text-transform: uppercase;
+        border-bottom: 1px solid #FFF;
+        border-radius: 5px 5px 0px 0px;
+    
+        div {
+            flex: 1;
+            padding: 20px 30px;
+            text-align: center;
+        }
+    }
+
+    .body {
+        display: flex;
+    
+        .empty-message {
+            flex: 1;
+            padding: 20px 30px;
+            text-align: center;
+        }
+        
+        .list {
+            flex: 1;
+            display: block;
+
+            .employee-details {
+                flex: 1;
+                display: flex;
+        
+                .detail {
+                    flex: 1;
+                    padding: 20px 30px;
+                    text-align: center;
+                }
+            }
+        
+            .employee-details:nth-child(4n),
+            .employee-details:nth-child(4n+2) {
+                background-color: #F5F5F5;
+            }
+    
+            .employee-details:nth-child(4n+1),
+            .employee-details:nth-child(4n+3) {
+                background-color: #FFF;
+            }
+        }
+    }
+}

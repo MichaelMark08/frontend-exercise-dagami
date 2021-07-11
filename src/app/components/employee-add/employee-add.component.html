@@ -1,0 +1,44 @@
+<div class="title">Add Employee</div>
+
+<div class="add-form">
+  <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+    <div class="field">
+      <label for="employee-id">Employee ID</label>
+      <input id="employee-id" type="text" formControlName="employeeId">
+    </div>
+    <div>
+      <div class="error" *ngIf="employeeForm.controls.employeeId.dirty && isFieldValid('employeeId')">
+        <span></span><span>Employee ID is required.</span>
+      </div>
+      <div class="error" *ngIf="employeeForm.controls.employeeId.dirty && duplicateValue('employeeId')">
+        <span></span><span>Employee ID already exists.</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="first-name">First Name</label>
+      <input id="first-name" type="text" formControlName="firstName">
+    </div>
+    <div class="error" *ngIf="employeeForm.controls.firstName.dirty && isFieldValid('firstName')">
+      <span></span><span>First Name is required.</span>
+    </div>
+    
+    <div class="field">
+      <label for="last-name">Last Name</label>
+      <input id="last-name" type="text" formControlName="lastName">
+    </div>
+    <div class="error" *ngIf="employeeForm.controls.lastName.dirty && isFieldValid('lastName')">
+      <span></span><span>Last Name is required.</span>
+    </div>
+    
+    <div class="field">
+      <label for="employee-email">Email</label>
+      <input id="employee-email" type="text" formControlName="email">
+    </div>
+    <div class="error" *ngIf="employeeForm.controls.email.dirty && isFieldValid('email')">
+      <span></span><span>Email is required.</span>
+    </div>
+
+    <button class="submit" type="submit" [disabled]="!(employeeForm.valid && !duplicateValue('employeeId'))">Add Employee</button>
+  </form>
+</div>
